@@ -1,0 +1,34 @@
+
+;mov #11111111b, &P1DIR
+
+start mov #array,r6
+
+count_loop mov @r6,&P1OUT
+call #delay
+inc r6
+
+cmp r6,#lastElement
+jeq start
+
+
+jmp count_loop
+
+
+delay mov.w #0Ah , R14 
+L2 mov.w #07A00h , R15
+L1 dec.w R15 ; Decrement R15
+jnz L1
+dec.w R14
+jnz L2
+ret
+
+
+array .byte 00111111b,00000110b,01011011b,01001111b,01100110b,01101101b,01111101b,00000111b,01111111b,01101111b
+;array .byte 00000110b,01001111b,01101101b,00000111b,01101111b
+
+;array .byte 00111111b,01011011b,01100110b,01111101b,01111111b
+lastElement
+
+
+end
+
