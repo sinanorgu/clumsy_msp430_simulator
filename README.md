@@ -1,9 +1,14 @@
 Warnings:
   This is a very simple msp simulator for assembly code.
+  
   Pygame library was used for visulation. You need to download this python library. (pip install pygame)
+  
   This is not an exact simulator. Most of the instruction are not included in this project.
+  
   Also some of included instruction are not complete. (Some flag values are updated but some of them are not)
+  
   Execution time of code is different than real execution.
+  
   In reality, most of the instructions are 2 byte, so PC(program counter) is incremented by 2 after executing an instrcution. But in this simulator pc is incremented by 1. 
   Memory implementation is very weak. It needs to be updated. 
   Memory and Stack are seperated. Stak pointer is not used but Stack can be used. Pop, push and call operations is supported. 
