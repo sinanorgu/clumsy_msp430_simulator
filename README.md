@@ -1,51 +1,63 @@
-Warnings:  
-  This is a very simple msp simulator for assembly code.  
-  Pygame library was used for visulation. You need to download this python library. (pip install pygame)  
-  This is not an exact simulator. Most of the instruction are not included in this project.    
-  Also some of included instruction are not complete. (Some flag values are updated but some of them are not)  
-  Execution time of code is different than real execution.  
-  In reality, most of the instructions are 2 byte, so PC(program counter) is incremented by 2 after executing an instrcution. But in this simulator pc is incremented by 1.   
-  Memory implementation is very weak. It needs to be updated.   
-  Memory and Stack are seperated. Stak pointer is not used but Stack can be used. Pop, push and call operations is supported.   
-  You can construct a byte array but you need to use a label after that line.  
-  Also arrays are defined in code section. Do not use ".data" section :)  
-  Codes cannot be seen in Memory. Memory includes only array values.  
-  Interrupts is not supported. (I tried to develop this code until I learned interrupt)    
-  Timer is not supported.  
-  There is some special registers. In real systems, they should not be used (for example accumulator).   
-  But simulator is not use these register for a spesific purpose. You need to be careful about this situation.  
-  Registers has limitless capacity. Overflow is not occured.  
-  Therefore there is no difference between mov.w, mov.b and mov . All of them is same.  
-  SUMMARY: A code may work in simulator, but it is not guaranteed that it will work in real microcontroller.  
-  
-What we have:  
-    Although there are lots of missing or incorrect parts, it is useful for basic operations.  
-    Addition, substruction, increment, decrement operations are supported.  
-    and, or, bis, xor operations are supported.  
-    Shift operations are rra, rla are supported.  
-    cmp operation updates zero and negative flag.   
-    Therefore most of the jump operation is supported.  
-    mov and memory read operations are supported.  
-    Push and pop is supported.   
-    call and ret operation is supported. A function can be writed.  
-    There is a seven segment display. (controlled by port1)  
-    There are 16 leds connected to port1 and port2.  
-    In stack, the value which pointed by stack pointer has green color :)  
-    Value of a register can be seen.  
-    You can define array.  
-    Array values can be seen in memeory.  
-    ;comment line is supported.   
-    YOU CAN PUT BREAKPOINT BY CLICKING CODE.   
-    Up and down buttons can be used for move the code.  
-    Button >   : Executes one operation  
-    Button >|  : Executes operations until breakpoint  
-    Button >>> : Executes operations (ignores breakpoint)  
-    Button ||  : Stops execution  
-    You can type filename by clicking the rectangular area.  
-    YOU HAVE TO CLICK dosya oku BUTTON to read the code file.  
-    Source code should be consist of only main part.  
-    Example code file is available.   
-    
+# MSP Simulator
 
-    
+## Warnings:
+- This is a very simple MSP simulator for assembly code.  
+- The **Pygame** library was used for visualization. You need to install this Python library:  
+  ```
+  pip install pygame
+  ```
+- This is not an exact simulator. Most of the instructions are not included in this project.  
+- Some of the included instructions are incomplete. (Some flag values are updated, while others are not.)  
+- The execution time of the code differs from real execution.  
+- In reality, most instructions are **2 bytes**, so the **Program Counter (PC)** is incremented by **2** after executing an instruction. However, in this simulator, the **PC** is incremented by **1**.  
+- The memory implementation is very weak and needs improvement.  
+- **Memory and Stack are separated.** The **Stack Pointer is not used**, but the Stack itself can be used. **Pop, push, and call operations are supported.**  
+- You can construct a **byte array**, but you must use a **label** after that line.  
+- Arrays are defined in the **code section**. Do not use the `.data` section. :)  
+- **Code cannot be seen in memory.** Memory only includes **array values**.  
+- **Interrupts are not supported.** (I tried to develop this code until I learned about interrupts.)  
+- **Timers are not supported.**  
+- There are some **special registers**. In real systems, they should not be used (e.g., the **accumulator**). However, the simulator does not use these registers for a specific purpose, so you need to be careful about this.  
+- **Registers have limitless capacity.** Overflow does not occur.  
+- Therefore, there is no difference between **MOV.W, MOV.B, and MOV**—all of them behave the same.  
 
+### ⚠️ Summary:  
+A code may work in this simulator, but **it is not guaranteed to work on a real microcontroller.**  
+
+---
+
+## What We Have:
+Although there are **many missing or incorrect parts**, the simulator is **useful for basic operations**.  
+
+### ✅ Supported Features:
+- **Arithmetic operations**: Addition, subtraction, increment, and decrement.  
+- **Logical operations**: AND, OR, BIS, XOR.  
+- **Shift operations**: **RRA** and **RLA** are supported.  
+- **CMP operation**: Updates **zero** and **negative** flags.  
+- **Jump operations**: Most jump instructions are supported.  
+- **MOV and memory read operations** are supported.  
+- **Stack operations**: Push and Pop are supported.  
+- **Function calls**: Call and RET operations are supported, allowing function implementation.  
+- **Seven-segment display**: Controlled by **Port 1**.  
+- **LEDs**: 16 LEDs are connected to **Port 1 and Port 2**.  
+- **Stack visualization**: The value pointed to by the **Stack Pointer** is highlighted in **green**.  
+- **Register values**: Can be viewed.  
+- **Array support**: You can define and view array values in memory.  
+- **Comments**: Lines starting with `;` are supported.  
+
+### 🎯 Debugging Features:
+- **You can set breakpoints by clicking on the code.**  
+- **Navigation buttons:**  
+  - **Up and Down buttons**: Scroll through the code.  
+- **Execution buttons:**  
+  - `>` : Executes one operation.  
+  - `>|` : Executes operations until a breakpoint.  
+  - `>>>` : Executes operations (ignores breakpoints).  
+  - `||` : Stops execution.  
+- **File operations:**  
+  - You can enter a filename by clicking the **rectangular area**.  
+  - **You MUST click the "Dosya Oku" button** to read the code file.  
+- **Source code should only contain the main part.**  
+- **An example code file is available.**  
+
+---
