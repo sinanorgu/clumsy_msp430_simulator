@@ -1,4 +1,6 @@
 # MSP Simulator
+![program view](https://github.com/sinanorgu/clumsy_msp430_simulator/blob/main/Ekran%20Resmi%202025-02-22%2001.22.24.png)
+
 
 ## Warnings:
 - This is a very simple MSP simulator for assembly code.  
